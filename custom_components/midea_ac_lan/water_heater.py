@@ -445,6 +445,11 @@ class MideaCDWaterHeater(MideaWaterHeater):
         )
 
     @property
+    def operation_list(self) -> list[str] | None:
+        """Midea CD Water Heater operation list."""
+        return ["None", "Energy-save", "Standard", "Dual", "Smart", "Vacation"]
+
+    @property
     def min_temp(self) -> float:
         """Midea CD Water Heater min temperature."""
         return cast("float", self._device.get_attribute(CDAttributes.min_temperature))
